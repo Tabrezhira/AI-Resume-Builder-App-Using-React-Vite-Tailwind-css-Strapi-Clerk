@@ -26,6 +26,29 @@
     "title": {
       "type": "string",
       "required": true
+    },
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "jobTitle": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "summery": {
+      "type": "text"
     }
   }
 }
