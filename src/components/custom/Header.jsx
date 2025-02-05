@@ -4,26 +4,26 @@ import { Link } from 'react-router-dom'
 import { UserButton, useUser } from '@clerk/clerk-react'
 
 function Header() {
-    const {user,isLoaded,isSignedIn} = useUser();
+    const { user, isSignedIn } = useUser();
+    return (
+        <div className='p-3 px-5 flex justify-between shadow-md'>
+             <Link to={'/dashboard'}>
+            <img src='/logo.svg' className='cursor-pointer' width={100} height={100} />
+            </Link>
+            {isSignedIn ?
+                <div className='flex gap-2 items-center'>
+                    <Link to={'/dashboard'}>
+                        <Button variant="outline">Dashboard</Button>
+                    </Link>
+                    <UserButton />
+                </div> :
+                <Link to={'/auth/sign-in'}>
+                    <Button>Get Started</Button>
+                </Link>
+            }
 
-  return (
-    <div className='p-3 px-5 flex shadow-md justify-between'>
-        <img src="/logo.svg" alt="logo" width={100} height={100}/>
-        {isSignedIn? 
-        <div className=' flex gap-2 items-center'>
-           <Link to={'/dashboard'}>
-             <Button variant='outline' >Dashboard</Button>
-           </Link> 
-           <UserButton/>
-        </div> :
-        <div>
-          <Link to={'/auth/sign-in'}>
-             <Button>Get Started</Button>
-           </Link> 
         </div>
-        }
-       </div>
-  )
+    )
 }
 
 export default Header

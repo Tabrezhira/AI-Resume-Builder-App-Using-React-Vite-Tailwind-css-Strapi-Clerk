@@ -3,10 +3,9 @@ import React from 'react'
 
 function SignInPage() {
   return (
-    <div className=' h-[100vh] flex justify-center items-center'>
+    <div className='flex justify-center my-20 items-center'>
       <SignIn/>
     </div>
-
   )
 }
 
